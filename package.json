@@ -1,0 +1,28 @@
+{
+  "name": "projeto-livre-caramelo",
+  "version": "1.0.0",
+  "description": "Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victoriardspaiva/projetoLivre-Caramelo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victoriardspaiva/projetoLivre-Caramelo/issues"
+  },
+  "homepage": "https://github.com/victoriardspaiva/projetoLivre-Caramelo#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
