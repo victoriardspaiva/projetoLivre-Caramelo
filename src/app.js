@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const dotenv = require('dotenv-safe')
 
 const router = require('./routes/placesRouter')
 
@@ -11,6 +12,8 @@ app.use(express.json())
 
 /* rotas */
 app.use('/home', router)
+
+dotenv.config()
 
 database.connect()
 
