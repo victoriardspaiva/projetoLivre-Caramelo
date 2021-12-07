@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const placesSchema = new mongoose.Schema({
+    id: mongoose.Schema.Types.ObjectId,
     name: {
         type: String,
         required: true
@@ -9,12 +10,13 @@ const placesSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    address: {
+    district: {
         type: String,
         required: true,
     },
     email: {
         type: String,
+        unique: true,
         required: true
     },
     contact: {
@@ -27,11 +29,15 @@ const placesSchema = new mongoose.Schema({
     },
     host: {
         type: Boolean,
-        quantity: Number,
         required: true
     },
-    type: {
-        
+    quantity: {
+        type: Number,
+        required: true
+    },
+    animal: {
+        type: String,
+        required: true        
     }
 }, { timestamps: true })
 
