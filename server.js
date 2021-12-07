@@ -1,5 +1,4 @@
 const app = require('./src/app')
-// const dotenv = require('dotenv-safe')
 
 const PORT = process.env.PORT
 

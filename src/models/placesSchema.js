@@ -25,13 +25,13 @@ const placesSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    adoption: {
+    host: {
         type: Boolean,
+        quantity: Number,
         required: true
     },
-    host: {
-        type: String,
-        required: true
+    type: {
+        
     }
 }, { timestamps: true })
 
