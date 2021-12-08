@@ -48,14 +48,14 @@ const getBySearch = async (req, res) => {
     let search = Places
 
     try {
-        if (id) {
-            search = await search.findById(id)
-            res.status(200).json(search)
-        }
-        if (name) {
-            search = await search.find({ name: { $regex: name } })
-            res.status(200).json(search)
-        }
+        if (id) search = await search.findById(id) 
+        if (name) search = await search.find({ name: { $regex: name } })
+        if (district) search = await search.find({ district: { $regex: district } })
+        if (animal) search = await search.find({ animal: { $regex: animal } })
+        if (host) search = await search.find({ host : host })            
+        
+        res.status(200).json(search)
+
     } catch (e) {
         res.status(500).json({
             message: e.message
