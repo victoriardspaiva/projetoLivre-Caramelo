@@ -44,15 +44,18 @@ const createPlace = async (req, res) => {
 }
 
 const getBySearch = async (req, res) => {
-    const { id, nome, host, district, animal } = req.query
+    const { id, name, host, district, animal } = req.query
     let search = Places
 
     try {
         if (id) {
-            search = await Places.findById(req.query.id)
+            search = await search.findById(id)
             res.status(200).json(search)
         }
-        nome != undefined ? search = await Places.find(req.query.nome) : res.status(500).send("Host not found")
+        if (name) {
+            search = await search.find({ name: { $regex: name } })
+            res.status(200).json(search)
+        }
     } catch (e) {
         res.status(500).json({
             message: e.message

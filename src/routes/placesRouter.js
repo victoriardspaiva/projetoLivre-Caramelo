@@ -10,7 +10,7 @@ router.get('/caramelo', controller.getAll)
 //@route GET /home/search
 //@desc Host by search 
 //@access Public
-router.post('/search', controller.getBySearch)
+router.get('/search', controller.getBySearch)
 
 //@route POST /home/create
 //@desc Create host
