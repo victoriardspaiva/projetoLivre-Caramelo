@@ -17,4 +17,10 @@ router.get('/search', controller.getBySearch)
 //@access Public
 router.post('/create', controller.createPlace)
 
+//@route PUT /home/update
+//@desc Update host
+//@access Public
+router.put('/update', controller.upHosts)
+router.put('/up', controller.upHostDois)
+
 module.exports = router

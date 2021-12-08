@@ -9,8 +9,8 @@ Voltado para animais - gatos e cachororos - em situação de vunerabilidade na r
 Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se disponibilizam para abrigar os animais até sua possivel adoção.
 
 ### O público alvo são dois: 
-1) pessoas que encontram algum animal abandonado e gostariam entregar à uma local de acolhimento.
-2) pessoas que buscam por locais que tenham pets disponiveis para adoção.
+1) pessoas que encontram algum animal abandonado e gostariam entregar à uma local de acolhimento. 🏡
+2) pessoas que buscam por locais que tenham pets disponiveis para adoção. 🐈
 
 ## Funcionalidades
 - [x] Listar todas os hosts disponiveis;
