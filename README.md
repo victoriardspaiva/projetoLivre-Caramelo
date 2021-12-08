@@ -1,10 +1,10 @@
 # 🐕 🍬 Projeto Caramelo 🍬 🐕
 Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
 
-## Problema 🐶 
+## Problemática 😿
 Grande número de animais abandonados na região metropolitana do Recife.
 
-## Solução
+## Solução 🐶
 Voltado para animais - gatos e cachororos - em situação de vunerabilidade na região metropolitana do Recife procurando uma lar temporário ou uma adoção responsável.
 Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se disponibilizam para abrigar os animais até sua possivel adoção.
 
