@@ -13,9 +13,9 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 2) pessoas que buscam por locais que tenham pets disponiveis para adoção.
 
 ## Funcionalidades
-- [ ] Listar todas os hosts disponiveis;
-- [ ] Listar hosts por filtros: nome, bairro, cidade, disponibilidade para acolhimento;
-- [ ] Cadastrar hosts;
+- [x] Listar todas os hosts disponiveis;
+- [x] Listar hosts por filtros: nome, bairro, cidade, disponibilidade para acolhimento;
+- [x] Cadastrar hosts;
 - [ ] Atualizar dados cadastrais do hosts;
 - [ ] Deletar um host.
 
