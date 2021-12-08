@@ -1,7 +1,7 @@
-# projetoLivre-Caramelo
+# 🐕 🍬 Projeto Caramelo 🍬 🐕
 Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
 
-## Problema
+## Problema 🐶 
 Grande número de animais abandonados na região metropolitana do Recife.
 
 ## Solução
