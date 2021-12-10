@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 const getAll = async (req, res) => {
     try {
         const places = await Places.find()
-        res.status(200).json({ message: 'Lista de ONG\'s e abrigos:', places })
+        res.status(200).json({ message: 'Host list:', places })
 
     } catch (e) {
         res.status(500).json({
@@ -45,15 +45,59 @@ const createPlace = async (req, res) => {
 
 const getBySearch = async (req, res) => {
     const { id, name, host, district, animal } = req.query
+    try {
+        let search 
+        if (id) {
+            search = await Places.findById(id)
+        }
+        if (name) {
+            search = await Places.find({ name: { $regex: name } })
+        }
+        if (animal) {
+            search = await Places.find({ animal: { $regex: animal } })
+        }
+        if (district) {
+            search = await Places.find({ district: { $regex: district } })
+        }
+        if (host) {
+            search = await Places.find({ host: host })
+        }
+        
+        console.log(search);
+        res.status(200).json(search)
+
+    } catch (e) {
+        res.status(500).json({
+            message: e.message
+        })
+    }
+}
+
+const getBySearchDois = async (req, res) => {
+    const { id, name, host, district, animal } = req.query
     let search = Places
+    let teste = {}
 
     try {
-        if (id) search = await search.findById(id)
-        if (name) search = await search.find({ name: { $regex: name } })
-        if (district) search = await search.find({ district: { $regex: district } })
-        if (animal) search = await search.find({ animal: { $regex: animal } })
-        if (host) search = await search.find({ host: host })
+        if (id) {
+            search = await search.findById(id)
+        } /* return res.status(200).json(search)*/
+        if (name) {
+            name = { $regex: name}
+            teste.name = name
+        }
+        if (animal) {
+            teste.animal = animal
+        }
+        if (district) {
+            teste.district = district 
+        }
+        if (host) {
+            teste.host = host
+        }
+        search = await search.find(teste)
 
+        console.log(teste)
         res.status(200).json(search)
 
     } catch (e) {
@@ -79,7 +123,6 @@ const upHosts = async (req, res) => {
         }
         console.log(hostReq);
 
-
         let newHost = await Places.findByIdAndUpdate({ _id: id }, { Places: hostReq }, { new: true })
         newHost = await newHost.save()
 
@@ -96,8 +139,8 @@ const upHosts = async (req, res) => {
 
 const upHostDois = async (req, res) => {
     try {
-        const findHost = await Places.findById(req.query.id)
-        console.log(findHost);
+        const id = req.query.id
+        let findHost = await Places.findById(id)
 
         if (findHost) {
             findHost.name = req.body.name || findHost.name
@@ -112,10 +155,11 @@ const upHostDois = async (req, res) => {
         }
 
         const savedHost = await findHost.save()
-        res.status(200).json({ 
+        res.status(200).json({
             message: "Host updated successfully", "New host": savedHost
         })
 
+        console.log(findHost)
     } catch (e) {
         res.status(500).json({
             message: e.message
@@ -124,10 +168,23 @@ const upHostDois = async (req, res) => {
     }
 }
 
+const deleteHost = async (req, res) => {
+    try {
+        const deletePlace = await Places.findByIdAndDelete({ _id: req.query.id })
+        res.status(200).json({
+            message: "Host deleted sucessfully", deletePlace
+        })
+    } catch (e) {
+        res.status(500).json({ message: e.message })
+    }
+}
+
 module.exports = {
     getAll,
     getBySearch,
+    getBySearchDois,
     createPlace,
     upHosts,
-    upHostDois
+    upHostDois,
+    deleteHost,
 }

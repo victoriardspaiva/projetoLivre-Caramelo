@@ -16,8 +16,14 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 - [x] Listar todas os hosts disponiveis;
 - [x] Listar hosts por filtros: nome, bairro, cidade, disponibilidade para acolhimento;
 - [x] Cadastrar hosts;
-- [ ] Atualizar dados cadastrais do hosts;
-- [ ] Deletar um host.
+- [x] Atualizar dados cadastrais do hosts;
+- [x] Deletar um host.
+
+## Tratamento de mensagens de erro
+- [] 422 Pesquisa não encontrada
+- [] só para gatos e cachorros
+- [] campo vazio
+- [] letra mauiscula/minuscula 
 
 ## Implementações futuras
 * Lista de animais disponiveis

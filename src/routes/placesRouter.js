@@ -11,6 +11,7 @@ router.get('/caramelo', controller.getAll)
 //@desc Host by search 
 //@access Public
 router.get('/search', controller.getBySearch)
+router.get('/teste', controller.getBySearchDois)
 
 //@route POST /home/create
 //@desc Create host
@@ -22,5 +23,11 @@ router.post('/create', controller.createPlace)
 //@access Public
 router.put('/update', controller.upHosts)
 router.put('/up', controller.upHostDois)
+
+//@route DEL /home/delete
+//@desc Delete host
+//@access Public
+router.delete('/delete', controller.deleteHost)
+
 
 module.exports = router
