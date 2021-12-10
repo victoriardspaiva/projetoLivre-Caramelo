@@ -14,7 +14,13 @@ const getAll = async (req, res) => {
 }
 
 const createPlace = async (req, res) => {
-    const { name, about, district, email, contact, pix, host, quantity, animal } = req.body
+    let { name, about, district, email, contact, pix, host, quantity, animal } = req.body
+    animal = animal.toLowerCase()    
+
+    if (animal != 'cat' && animal != 'dog' && animal != 'both') {
+        return res.status(400).json({ message: "Choose from one of the valid options: cat or dog." })
+    } //tratamento para não aceitar qq coisa que seja != de cat, dog ou ambos
+
     try {
         const newPlace = new Places({
             name,
@@ -28,7 +34,6 @@ const createPlace = async (req, res) => {
             animal,
             _id: new mongoose.Types.ObjectId()
         })
-
         const savePlace = await newPlace.save()
         res.status(201).json({
             message: "Successfully created host.",
@@ -41,12 +46,13 @@ const createPlace = async (req, res) => {
         })
     }
 
+
 }
 
 const getBySearch = async (req, res) => {
     const { id, name, host, district, animal } = req.query
     try {
-        let search 
+        let search
         if (id) {
             search = await Places.findById(id)
         }
@@ -60,9 +66,9 @@ const getBySearch = async (req, res) => {
             search = await Places.find({ district: { $regex: district } })
         }
         if (host) {
-            search = await Places.find({ host: host })
+            search = await Places.find({ host: host }) // e com quantidade > 0
         }
-        
+
         console.log(search);
         res.status(200).json(search)
 
@@ -83,14 +89,14 @@ const getBySearchDois = async (req, res) => {
             search = await search.findById(id)
         } /* return res.status(200).json(search)*/
         if (name) {
-            name = { $regex: name}
+            name = { $regex: name }
             teste.name = name
         }
         if (animal) {
             teste.animal = animal
         }
         if (district) {
-            teste.district = district 
+            teste.district = district
         }
         if (host) {
             teste.host = host
@@ -186,5 +192,5 @@ module.exports = {
     createPlace,
     // upHosts,
     upHostDois,
-    deleteHost,
+    deleteHost
 }

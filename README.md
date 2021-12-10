@@ -21,11 +21,12 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 
 ## Tratamento de mensagens de erro
 - [] 422 Pesquisa não encontrada
-- [] só para gatos e cachorros
+- [x] só para gatos e cachorros
 - [] campo vazio
 - [] letra mauiscula/minuscula 
 
 ## Implementações futuras
+* Contagem de vagas nos abrigos
 * Lista de animais disponiveis
 * Login de usuario (quero adotar/ quero resgatar)
 * Padrinho

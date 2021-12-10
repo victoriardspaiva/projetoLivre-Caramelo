@@ -37,6 +37,7 @@ const placesSchema = new mongoose.Schema({
     },
     animal: {
         type: String,
+        // type: ['dog', 'cat', 'both'],
         required: true        
     }
 }, { timestamps: true })
