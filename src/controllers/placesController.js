@@ -107,35 +107,35 @@ const getBySearchDois = async (req, res) => {
     }
 }
 
-const upHosts = async (req, res) => {
-    try {
-        const id = req.query.id
-        let hostReq = {
-            name: req.body.name,
-            about: req.body.about,
-            district: req.body.district,
-            email: req.body.email,
-            contact: req.body.contact,
-            pix: req.body.pix,
-            host: req.body.host,
-            quantity: req.body.quantity,
-            animal: req.body.animal
-        }
-        console.log(hostReq);
+// const upHosts = async (req, res) => {
+//     try {
+//         const id = req.query.id
+//         let hostReq = {
+//             name: req.body.name,
+//             about: req.body.about,
+//             district: req.body.district,
+//             email: req.body.email,
+//             contact: req.body.contact,
+//             pix: req.body.pix,
+//             host: req.body.host,
+//             quantity: req.body.quantity,
+//             animal: req.body.animal
+//         }
+//         console.log(hostReq);
 
-        let newHost = await Places.findByIdAndUpdate({ _id: id }, { Places: hostReq }, { new: true })
-        newHost = await newHost.save()
+//         let newHost = await Places.findByIdAndUpdate({ _id: id }, { Places: hostReq }, { new: true })
+//         newHost = await newHost.save()
 
-        console.log(newHost);
-        res.status(200).json({
-            message: "Host updated successfully", "New host": newHost
-        })
-    } catch (e) {
-        res.status(500).json({
-            message: e.message
-        })
-    }
-}
+//         console.log(newHost);
+//         res.status(200).json({
+//             message: "Host updated successfully", "New host": newHost
+//         })
+//     } catch (e) {
+//         res.status(500).json({
+//             message: e.message
+//         })
+//     }
+// }
 
 const upHostDois = async (req, res) => {
     try {
@@ -184,7 +184,7 @@ module.exports = {
     getBySearch,
     getBySearchDois,
     createPlace,
-    upHosts,
+    // upHosts,
     upHostDois,
     deleteHost,
 }

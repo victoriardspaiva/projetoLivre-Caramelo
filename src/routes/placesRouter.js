@@ -21,7 +21,7 @@ router.post('/create', controller.createPlace)
 //@route PUT /home/update
 //@desc Update host
 //@access Public
-router.put('/update', controller.upHosts)
+// router.put('/update', controller.upHosts)
 router.put('/up', controller.upHostDois)
 
 //@route DEL /home/delete
