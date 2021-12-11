@@ -2,6 +2,8 @@ const controller = require('../controllers/placesController')
 const express = require('express')
 const router = express.Router()
 
+const { checkAuth } = require('../middlewares/auth')
+
 //@route GET /home/caramelo
 //@desc List all host
 //@access Public
@@ -15,19 +17,19 @@ router.get('/teste', controller.getBySearchDois)
 
 //@route POST /home/create
 //@desc Create host
-//@access Public
-router.post('/create', controller.createPlace)
+//@access Private
+router.post('/create', checkAuth, controller.createPlace)
 
 //@route PUT /home/update
 //@desc Update host
-//@access Public
+//@access Private
 // router.put('/update', controller.upHosts)
-router.put('/up', controller.upHostDois)
+router.put('/up', checkAuth, controller.upHostDois)
 
 //@route DEL /home/delete
 //@desc Delete host
-//@access Public
-router.delete('/delete', controller.deleteHost)
+//@access Private
+router.delete('/delete', checkAuth, controller.deleteHost)
 
 
 module.exports = router
