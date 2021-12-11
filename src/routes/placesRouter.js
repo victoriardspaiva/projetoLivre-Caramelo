@@ -13,7 +13,6 @@ router.get('/caramelo', controller.getAll)
 //@desc Host by search 
 //@access Public
 router.get('/search', controller.getBySearch)
-router.get('/teste', controller.getBySearchDois)
 
 //@route POST /home/create
 //@desc Create host
@@ -24,7 +23,7 @@ router.post('/create', checkAuth, controller.createPlace)
 //@desc Update host
 //@access Private
 // router.put('/update', controller.upHosts)
-router.put('/up', checkAuth, controller.upHostDois)
+router.put('/up', checkAuth, controller.upHost)
 
 //@route DEL /home/delete
 //@desc Delete host

@@ -45,44 +45,12 @@ const createPlace = async (req, res) => {
             message: e.message
         })
     }
-
-
 }
 
 const getBySearch = async (req, res) => {
     const { id, name, host, district, animal } = req.query
-    try {
-        let search
-        if (id) {
-            search = await Places.findById(id)
-        }
-        if (name) {
-            search = await Places.find({ name: { $regex: name } })
-        }
-        if (animal) {
-            search = await Places.find({ animal: { $regex: animal } })
-        }
-        if (district) {
-            search = await Places.find({ district: { $regex: district } })
-        }
-        if (host) {
-            search = await Places.find({ host: host }) // e com quantidade > 0
-        }
-
-        console.log(search);
-        res.status(200).json(search)
-
-    } catch (e) {
-        res.status(500).json({
-            message: e.message
-        })
-    }
-}
-
-const getBySearchDois = async (req, res) => {
-    const { id, name, host, district, animal } = req.query
     let search = Places
-    let teste = {}
+    let filter = {}
 
     try {
         if (id) {
@@ -90,14 +58,13 @@ const getBySearchDois = async (req, res) => {
             return res.status(200).json(search)
         }
 
-        if (name) teste.name = { $regex: name }
-        if (animal) teste.animal = { $regex: animal }
-        if (district) teste.district = { $regex: district }
-        if (host) teste.host = host
+        if (name) filter.name = { $regex: name }
+        if (animal) filter.animal = { $regex: animal }
+        if (district) filter.district = { $regex: district }
+        if (host) filter.host = host
                 
-        search = await search.find(teste)
+        search = await search.find(filter)
         console.log(search)
-
         
         res.status(200).json(search)
 
@@ -108,37 +75,7 @@ const getBySearchDois = async (req, res) => {
     }
 }
 
-// const upHosts = async (req, res) => {
-//     try {
-//         const id = req.query.id
-//         let hostReq = {
-//             name: req.body.name,
-//             about: req.body.about,
-//             district: req.body.district,
-//             email: req.body.email,
-//             contact: req.body.contact,
-//             pix: req.body.pix,
-//             host: req.body.host,
-//             quantity: req.body.quantity,
-//             animal: req.body.animal
-//         }
-//         console.log(hostReq);
-
-//         let newHost = await Places.findByIdAndUpdate({ _id: id }, { Places: hostReq }, { new: true })
-//         newHost = await newHost.save()
-
-//         console.log(newHost);
-//         res.status(200).json({
-//             message: "Host updated successfully", "New host": newHost
-//         })
-//     } catch (e) {
-//         res.status(500).json({
-//             message: e.message
-//         })
-//     }
-// }
-
-const upHostDois = async (req, res) => {
+const upHost = async (req, res) => {
     try {
         const id = req.query.id
         let findHost = await Places.findById(id)
@@ -183,9 +120,8 @@ const deleteHost = async (req, res) => {
 module.exports = {
     getAll,
     getBySearch,
-    getBySearchDois,
+    getBySearch,
     createPlace,
-    // upHosts,
-    upHostDois,
+    upHost,
     deleteHost
 }
