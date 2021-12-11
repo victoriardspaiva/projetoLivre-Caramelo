@@ -20,16 +20,17 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 - [x] Deletar um host.
 
 ## Tratamento de mensagens de erro
-- [] 422 Pesquisa não encontrada
+- [] 422 Pesquisa não encontrada (dos filtros)
 - [x] só para gatos e cachorros
 - [] campo vazio
 - [] letra mauiscula/minuscula 
 
 ## Implementações futuras
-* Exibir só host que tenham disponibilidade de vagas
-* Login de usuario (quero adotar/ quero resgatar/ padrinho) 
+- [x] Login de usuario
+* Exibir só host que tenham disponibilidade de vagas/ * Contagem de vagas nos abrigos 
+* Filtro do user (quero adotar/ quero resgatar/ padrinho) 
+
 * Lista de animais disponiveis
-* Contagem de vagas nos abrigos 
 * Notificação de eventos e campanhas de adoção
 * Veterinarios parceiros
 
