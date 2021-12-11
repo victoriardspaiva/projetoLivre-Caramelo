@@ -1,7 +1,7 @@
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
-const UserSchema = require('../models/user')
+const UserSchema = require('../models/userSchema')
 const { hashPass } = require('../helpers/auth')
 
 const register = async(req, res) => { 

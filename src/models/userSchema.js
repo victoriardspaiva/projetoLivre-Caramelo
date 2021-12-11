@@ -10,10 +10,6 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    profile: { //host e/ou adoption
-        type: String,
-        required: true
-    },
     pass: {
         type: String,
         required: true

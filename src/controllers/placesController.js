@@ -15,8 +15,8 @@ const getAll = async (req, res) => {
 
 const createPlace = async (req, res) => {
     let { name, about, district, email, contact, pix, host, quantity, animal } = req.body
-    animal = animal.toLowerCase()
 
+    animal = animal.toLowerCase()
     if (animal != 'cat' && animal != 'dog' && animal != 'both') {
         return res.status(400).json({ message: "Choose from one of the valid options: cat or dog." })
     } //tratamento para não aceitar qq coisa que seja != de cat, dog ou ambos
@@ -29,7 +29,7 @@ const createPlace = async (req, res) => {
             email,
             contact,
             pix,
-            host,
+            host, //adoção ou patrocinador
             quantity,
             animal,
             _id: new mongoose.Types.ObjectId()
@@ -93,11 +93,12 @@ const getBySearchDois = async (req, res) => {
         if (name) teste.name = { $regex: name }
         if (animal) teste.animal = { $regex: animal }
         if (district) teste.district = { $regex: district }
-        if (host && quantity >0) teste.host = host
-        
+        if (host) teste.host = host
+                
         search = await search.find(teste)
+        console.log(search)
 
-        console.log(teste)
+        
         res.status(200).json(search)
 
     } catch (e) {
