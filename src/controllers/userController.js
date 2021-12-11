@@ -3,10 +3,9 @@ const jwt = require('jsonwebtoken')
 
 const UserSchema = require('../models/userSchema')
 const { hashPass } = require('../helpers/auth')
-const userSchema = require('../models/userSchema')
 
 // sem rota privada
-const getAll = async(req, res) => {
+const getAll = async (req, res) => {
     try {
         const user = await UserSchema.find()
         res.status(200).json({
@@ -19,14 +18,13 @@ const getAll = async(req, res) => {
     }
 }
 
-const register = async(req, res) => { 
+const register = async (req, res) => {
     const { name, email, profile, pass } = req.body
 
-    try { 
+    try {
         const newUser = new UserSchema({
             name,
             email,
-            profile,
             pass
         })
         const passHashed = await hashPass(newUser.pass, res)
@@ -37,25 +35,25 @@ const register = async(req, res) => {
             message: "successfully registered user", saveUser
         })
     } catch (e) {
-        res.status(500).json({ message: e.message})
+        res.status(500).json({ message: e.message })
     }
 }
 
-const login = async(req, res) => {
+const login = async (req, res) => {
     const { email, pass } = req.body
     try {
-        const user = await userSchema.findOne({ email: email })
+        const user = await UserSchema.findOne({ email: email })
 
-        if(!user) return res.status(422).send({ message: "Email not found."})
+        if (!user) return res.status(422).send({ message: "Email not found." })
 
         const checkPss = await bcrypt.compare(pass, user.pass)
 
-        if(!checkPss) return res.status(422).send({ message: "Password invalid"})
+        if (!checkPss) return res.status(422).send({ message: "Password invalid" })
 
         const secret = process.env.SECRET
-        const token = jwt.sign({ id: user._id}, secret)
-        res.status(200).json({ message: `Login successfully, token: ${token}`})
-              
+        const token = jwt.sign({ id: user._id }, secret)
+        res.status(200).json({ message: `Login successfully, token: ${token}` })
+
     } catch (e) {
         res.status(500).json({
             message: e.message
@@ -63,20 +61,58 @@ const login = async(req, res) => {
     }
 }
 
+const upUsers = async (req, res) => {
+    try {
+        const id = req.query.id
+        let findUser = await UserSchema.findById(id)
+
+        if (findUser) {
+            findUser.name = req.body.name || findUser.name
+            findUser.email = req.body.email || findUser.email
+            findUser.pass = req.body.pass || findUser.pass
+        }
+
+        const passHashed = await hashPass(findUser.pass, res)
+        findUser.pass = passHashed
+
+        const savedUser = await findUser.save()
+        res.status(200).json({
+            message: "User updated sucessfully", "New User": savedUser
+        })
+    } catch (e) {
+        res.status(500).json({
+            message: e.message
+        })
+    }
+}
+
+const deleteUser = async (req, res) => {
+    try {
+        const deleteUser = await UserSchema.findByIdAndDelete({ _id: req.query.id })
+        res.status(200).json({
+            message: "User deleted sucessfully", deleteUser
+        })
+    } catch (e) {
+        res.status(500).json({ message: e.message })
+    }
+}
+
 //com rota privada
-const getUser = async(req, res) => {
+const getUser = async (req, res) => {
     const id = req.query.id
 
     const user = await userSchema.findById(id, '-pass')
 
     if (!user) return res.status(422).send({ message: "We didn't find any record with the information passed." })
 
-    res.status(200).json({user})
+    res.status(200).json({ user })
 }
 
 module.exports = {
     register,
     getAll,
     login,
-    getUser
+    getUser,
+    upUsers,
+    deleteUser
 }

@@ -97,7 +97,6 @@ const upHost = async (req, res) => {
             message: "Host updated successfully", "New host": savedHost
         })
 
-        console.log(findHost)
     } catch (e) {
         res.status(500).json({
             message: e.message

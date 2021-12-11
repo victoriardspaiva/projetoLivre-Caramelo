@@ -23,5 +23,15 @@ routerUser.post('/login', controller.login)
 //@access Private
 routerUser.get('/id', checkAuth, controller.getUser)
 
+//@route PUT /user/update
+//@desc Update users
+//@access Public
+routerUser.put('/update', controller.upUsers)
+
+//@route DELETE /user/delete
+//@desc Delete users
+//@access Public
+routerUser.delete('/delete', controller.deleteUser)
+
 module.exports = routerUser
 
