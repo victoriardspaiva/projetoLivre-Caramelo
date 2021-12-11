@@ -26,10 +26,9 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 - [] letra mauiscula/minuscula 
 
 ## Implementações futuras
-* Contagem de vagas nos abrigos
+* Login de usuario (quero adotar/ quero resgatar/ padrinho) 
 * Lista de animais disponiveis
-* Login de usuario (quero adotar/ quero resgatar)
-* Padrinho
+* Contagem de vagas nos abrigos 
 * Notificação de eventos e campanhas de adoção
 * Veterinarios parceiros
 

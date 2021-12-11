@@ -15,7 +15,7 @@ const getAll = async (req, res) => {
 
 const createPlace = async (req, res) => {
     let { name, about, district, email, contact, pix, host, quantity, animal } = req.body
-    animal = animal.toLowerCase()    
+    animal = animal.toLowerCase()
 
     if (animal != 'cat' && animal != 'dog' && animal != 'both') {
         return res.status(400).json({ message: "Choose from one of the valid options: cat or dog." })
@@ -87,20 +87,14 @@ const getBySearchDois = async (req, res) => {
     try {
         if (id) {
             search = await search.findById(id)
-        } /* return res.status(200).json(search)*/
-        if (name) {
-            name = { $regex: name }
-            teste.name = name
+            return res.status(200).json(search)
         }
-        if (animal) {
-            teste.animal = animal
-        }
-        if (district) {
-            teste.district = district
-        }
-        if (host) {
-            teste.host = host
-        }
+
+        if (name) teste.name = { $regex: name }
+        if (animal) teste.animal = { $regex: animal }
+        if (district) teste.district = { $regex: district }
+        if (host && quantity >0) teste.host = host
+        
         search = await search.find(teste)
 
         console.log(teste)

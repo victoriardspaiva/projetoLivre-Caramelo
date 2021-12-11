@@ -12,6 +12,7 @@ app.use(express.json())
 
 /* rotas */
 app.use('/home', router)
+// app.use('/', index.js)
 
 dotenv.config()
 
