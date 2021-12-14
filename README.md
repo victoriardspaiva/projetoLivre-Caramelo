@@ -62,6 +62,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Express](https://expressjs.com/pt-br/)
 - [Nodemon](https://nodemon.io/)
 - [Cors](https://www.typescriptlang.org/)
+- [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [JWT](https://www.npmjs.com/package/jsonwebtoken)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
+- [Dotenv-safe](https://www.npmjs.com/package/dotenv-safe)
 
 ### 📌 Orientações
 ---
@@ -74,26 +78,25 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/victoriardspaiva/On14-TodasEmTech-s11-Revisao-API>
+$ git clone <https://github.com/victoriardspaiva/projetoLivre-Caramelo>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd On14-TodasEmTech-s11-Revisao-API/para_o_lar
+$ cd projetoLivre-Caramelo
 
 # Instale as dependências
-$ npm install
+$ npm install ou npm i
 
 # Execute o servidor
 $ npm start
 
-# O servidor inciará na porta:7050 - acesse <http://localhost:7050>
+# O servidor inciará na porta:9090 - acesse <http://localhost:9090>
 ```
 #### 🚀  Rotas, links e métodos
 ---
 
 A ferramenta de suporte de criação das requisição usada foi o [Postman](https://www.postman.com/), você pode usar a de sua preferência.
 
-
-- Listar todos os estabelicimentos:<br />
+- Listar todas os hosts disponiveis:<br />
 GET 🗂️ <http://localhost:7050/estabelecimento/todos>
 
 - Listar estabelicimentos por id:<br />
