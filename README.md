@@ -1,7 +1,7 @@
 # 🐕 🍬 Projeto Caramelo 🍬 🐕
 Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
 
-![assets/1.png](assets/1.png)
+![assets/logo.png](assets/logo.png)
 
 
 ## 📑 Índice
@@ -98,12 +98,20 @@ $ npm install ou npm i
 # Execute o servidor
 $ npm start
 
-# O servidor inciará na porta:9090 - acesse <http://localhost:9090> #VARIAVEL DE AMBIENTE NO POSTMAN
+# O servidor inciará na porta:9090 - acesse <http://localhost:9090> 
 ```
 #### 🚀  Rotas, links e métodos
 ---
-
 A ferramenta de suporte de criação das requisição usada foi o [Postman](https://www.postman.com/), você pode usar a de sua preferência.
+
+#### Observação:
+<br>
+
+Variáveis de ambientes: é possivel criar variáveis que sejam visiveis para todo o escopo do projeto, existem alguns beneficios um dele é não deixar o valor exposto, além de poder ser reutilizado sempre que necessário.
+
+Para criar a variavel é necessário na collection > aba Variables preencha na coluna variable da tabela o nome da variavel `URL` e em initial value e current value colocar o valor `http://localhost:9090`
+
+> Na barra de URL `endpoint`, vamos preencher o nome da variavel entre dois cochetes `{{URL}}`.
 
 ## Places:
 
@@ -161,13 +169,14 @@ DELETE ❌ <http://localhost:9090/user/delete><br />
 - [] letra mauiscula/minuscula 
 
 ### Implementações futuras
-- [x] Login de usuario
-* Exibir só host que tenham disponibilidade de vagas/ * Contagem de vagas nos abrigos 
-* Filtro do user (quero adotar/ quero resgatar/ padrinho) 
-
-* Lista de animais disponiveis
-* Notificação de eventos e campanhas de adoção
-* Veterinarios parceiros
+* Exibir número disponivel de vagas;
+* Perfil de usuário:
+   * Quero adotar
+   * Quero resgatar
+   * Quero ser cuidador 
+* Cadastro de animais disponiveis;
+* Notificação de eventos e campanhas de adoção;
+* Veterinários parceiros.
 
 
 
