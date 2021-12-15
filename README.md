@@ -1,5 +1,6 @@
 # 🐕 🍬 Projeto Caramelo 🍬 🐕
-Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
+
+> Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
 
 ![assets/logo.png](assets/logo.png)
 
@@ -77,11 +78,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### 📌 Orientações
 ---
 ### 📎 Pré-requisitos:
+
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
-Para o banco de dados usaremos um não relacional (NoSQL) [MongoDB], se você quiser criar seu db na nuvem, deve criar uma conta no [Mongo Atlas](https://account.mongodb.com/), a partir disso é possivel da nuvem mesmo gerencia-lo ou também é possivel atráves do aplicativo desktop [MongoCompass](https://www.mongodb.com/products/compass).
-#mais detalhes depois
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
+* [Git](https://git-scm.com);
+* [Node.js](https://nodejs.org/en/);
+* Para o banco de dados usaremos um não relacional - NoSQL - MongoDB, se você quiser criar seu db na nuvem, deve criar uma conta no [Mongo Atlas](https://account.mongodb.com/), a partir disso é possivel da nuvem mesmo gerencia-lo ou também é possivel atráves do aplicativo desktop [MongoCompass](https://www.mongodb.com/products/compass).
+* Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
 
 #### 🎲 Rodando o Back End (servidor)
 
@@ -100,14 +102,13 @@ $ npm start
 
 # O servidor inciará na porta:9090 - acesse <http://localhost:9090> 
 ```
-#### 🚀  Rotas, links e métodos
+### 🚀  Rotas, links e métodos
 ---
 A ferramenta de suporte de criação das requisição usada foi o [Postman](https://www.postman.com/), você pode usar a de sua preferência.
 
-#### Observação:
-<br>
 
-Variáveis de ambientes: é possivel criar variáveis que sejam visiveis para todo o escopo do projeto, existem alguns beneficios um dele é não deixar o valor exposto, além de poder ser reutilizado sempre que necessário.
+#### Variáveis de ambientes: 
+é possivel criar variáveis que sejam visiveis para todo o escopo do projeto, existem alguns beneficios um dele é não deixar o valor exposto, além de poder ser reutilizado sempre que necessário.
 
 Para criar a variavel é necessário na collection > aba Variables preencha na coluna variable da tabela o nome da variavel `URL` e em initial value e current value colocar o valor `http://localhost:9090`
 
