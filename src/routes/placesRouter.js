@@ -22,7 +22,6 @@ router.post('/create', checkAuth, controller.createPlace)
 //@route PUT /home/update
 //@desc Update host
 //@access Private
-// router.put('/update', controller.upHosts)
 router.put('/up', checkAuth, controller.upHost)
 
 //@route DEL /home/delete
@@ -32,5 +31,3 @@ router.delete('/delete', checkAuth, controller.deleteHost)
 
 
 module.exports = router
-
-//jfskldfjsklfshklfhsfkashdfkjshdf

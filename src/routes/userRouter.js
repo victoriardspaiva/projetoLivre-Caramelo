@@ -20,8 +20,8 @@ routerUser.post('/login', controller.login)
 
 //@route GET /user/id
 //@desc List all users
-//@access Private
-routerUser.get('/id', checkAuth, controller.getUser)
+//@access Public
+routerUser.get('/id', controller.getUser)
 
 //@route PUT /user/update
 //@desc Update users
