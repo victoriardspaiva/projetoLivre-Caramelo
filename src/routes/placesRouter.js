@@ -4,10 +4,10 @@ const router = express.Router()
 
 const { checkAuth } = require('../middlewares/auth')
 
-//@route GET /home/caramelo
+//@route GET /home/all
 //@desc List all host
 //@access Public
-router.get('/caramelo', controller.getAll)
+router.get('/all', controller.getAll)
 
 //@route GET /home/search
 //@desc Host by search 

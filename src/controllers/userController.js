@@ -19,7 +19,7 @@ const getAll = async (req, res) => {
 }
 
 const register = async (req, res) => {
-    const { name, email, profile, pass } = req.body
+    const { name, email, pass } = req.body
 
     try {
         const newUser = new UserSchema({

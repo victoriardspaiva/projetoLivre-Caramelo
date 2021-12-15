@@ -26,7 +26,7 @@ Grande número de animais abandonados na região metropolitana do Recife.
 Voltado para animais - gatos e cachororos - em situação de vunerabilidade na região metropolitana do Recife procurando uma lar temporário ou uma adoção responsável.
 Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se disponibilizam para abrigar os animais até sua possivel adoção.
 
-#### O público alvo são dois: 
+#### O público alvo: 
 1) pessoas que encontram algum animal abandonado e gostariam entregar à uma local de acolhimento. 🏡
 2) pessoas que buscam por locais que tenham pets disponiveis para adoção. 🐈
 
@@ -72,6 +72,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### 📎 Pré-requisitos:
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). 
+Para o banco de dados usaremos um não relacional (NoSQL) [MongoDB], se você quiser criar seu db na nuvem, deve criar uma conta no [Mongo Atlas](https://account.mongodb.com/), a partir disso é possivel da nuvem mesmo gerencia-lo ou também é possivel atráves do aplicativo desktop [MongoCompass](https://www.mongodb.com/products/compass).
+#mais detalhes depois
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
 
 #### 🎲 Rodando o Back End (servidor)
@@ -89,32 +91,61 @@ $ npm install ou npm i
 # Execute o servidor
 $ npm start
 
-# O servidor inciará na porta:9090 - acesse <http://localhost:9090>
+# O servidor inciará na porta:9090 - acesse <http://localhost:9090> #VARIAVEL DE AMBIENTE NO POSTMAN
 ```
 #### 🚀  Rotas, links e métodos
 ---
 
 A ferramenta de suporte de criação das requisição usada foi o [Postman](https://www.postman.com/), você pode usar a de sua preferência.
 
+## Places:
+
+
+
+- Página inicial:<br />
+GET 🏚️ <http://localhost:9090/>
+
 - Listar todas os hosts disponiveis:<br />
-GET 🗂️ <http://localhost:7050/estabelecimento/todos>
+GET 🗂️ <http://localhost:9090/home/caramelo>
 
-- Listar estabelicimentos por id:<br />
-GET 📂 <http://localhost:7050/estabelecimento/:id>
+- Listar hosts por filtros:<br />
+GET 🗃️ <http://localhost:9090/home/search>
 
-- Criar um cadastro para o estabelicimento:<br />
-POST 📋 <http://localhost:7050/estabelecimento/criar>
+   - ✔️ name
+   - ✔️ id
+   - ✔️ animal
+   - ✔️ district
+   - ✔️ host
 
-- Dar like ou deslike em um estabelicmento:<br />
-PATCH 👍 <http://localhost:7050/estabelecimento/likes/:id/?><br />
-Obs.: Há duas query params, um para o like e outro para deslike. Assim, com a mesma rota é possível realizar as duas funções.
+<!-- # rotas privadas -->
+- Criar um cadastro para o host:<br /> 
+POST 📋 <http://localhost:9090/home/create>
 
-### Rotas, links e métodos
-- [x] Listar todas os hosts disponiveis;
-- [x] Listar hosts por filtros: nome, bairro, cidade, disponibilidade para acolhimento;
-- [x] Cadastrar hosts;
-- [x] Atualizar dados cadastrais do hosts;
-- [x] Deletar um host.
+- Atualizar dados cadastrais do host:<br />
+PUT 📝 <http://localhost:9090/home/update><br />
+
+- Deletar um host:<br />
+DELETE 🗑️ <http://localhost:9090/home/delete><br />
+
+## Usuários 
+
+- Listar todos usuários:<br />
+GET 🗂️ <http://localhost:9090/user/all>
+
+- Listar usuário por id:<br />
+GET 📂 <http://localhost:9090/user/id?>
+
+- Registrar usuários:<br /> 
+POST 📋 <http://localhost:9090/user/register>
+
+- Login de usuário:<br /> 
+POST ✅ <http://localhost:9090/user/login>
+
+- Atualizar dados cadastrais do usuário:<br />
+PUT 📝 <http://localhost:9090/user/update><br />
+
+- Deletar um usuários:<br />
+DELETE ❌ <http://localhost:9090/user/delete><br />
 
 ### Tratamento de mensagens de erro
 - [] 422 Pesquisa não encontrada (dos filtros)
