@@ -33,25 +33,32 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 ### 🧱 Arquitetura
 ---
 ```
-├───📂para_o_lar/
-    ├───📂assets/
-    │   ├───1.png
-    │   ├───2.png
-    │   └───3.png
-    ├───📂src/
-    │   ├───📂controllers/
-    │   │   └───estabelecimentoControllers.js
-    │   ├───📂models/
-    │   │   └───estabelecimentos.json
-    │   ├───📂routers/
-    │   │   └───estabelecimentoRouters.js
-    │   └───app.js
-    ├───.gitignore
-    ├───Instrucoes.md
-    ├───package-lock.json
-    ├───package.json
-    ├───readme.md
-    └───server.js
+├───📂src/
+│   ├───📂controllers/
+│   │   ├───placesController.js
+│   │   └───userController.js
+│   ├───📂database/
+│   │   └───configMongo.js
+│   ├───📂helpers/
+│   │   └───auth.js
+│   ├───📂middlewares/
+│   │   └───auth.js
+│   ├───📂models/
+│   │   ├───placesSchema.js
+│   │   └───userSchema.js
+│   ├───📂routes/
+│   │   ├───placesRouter.js
+│   │   └───userRouter.js
+│   ├───app.js 
+│   └───index.js
+├───.env
+├───.env.example
+├───.gitignore
+├───package-lock.json
+├───package.json
+├───Procfile
+├───README.md
+└───server.js
 ```
 ### 💻 Tecnologias
 ---
