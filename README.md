@@ -33,26 +33,34 @@ Terá uma base de dados de hosts que pode ser abrigos, ONGs ou pessoas que se di
 ### 🧱 Arquitetura
 ---
 ```
-├───📂para_o_lar/
-    ├───📂assets/
-    │   ├───1.png
-    │   ├───2.png
-    │   └───3.png
-    ├───📂src/
-    │   ├───📂controllers/
-    │   │   └───estabelecimentoControllers.js
-    │   ├───📂models/
-    │   │   └───estabelecimentos.json
-    │   ├───📂routers/
-    │   │   └───estabelecimentoRouters.js
-    │   └───app.js
-    ├───.gitignore
-    ├───Instrucoes.md
-    ├───package-lock.json
-    ├───package.json
-    ├───readme.md
-    └───server.js
+├───📂src/
+│   ├───📂controllers/
+│   │   ├───placesController.js
+│   │   └───userController.js
+│   ├───📂database/
+│   │   └───configMongo.js
+│   ├───📂helpers/
+│   │   └───auth.js
+│   ├───📂middlewares/
+│   │   └───auth.js
+│   ├───📂models/
+│   │   ├───placesSchema.js
+│   │   └───userSchema.js
+│   ├───📂routes/
+│   │   ├───placesRouter.js
+│   │   └───userRouter.js
+│   ├───app.js 
+│   └───index.js
+├───.env
+├───.env.example
+├───.gitignore
+├───package-lock.json
+├───package.json
+├───Procfile
+├───README.md
+└───server.js
 ```
+
 ### 💻 Tecnologias
 ---
 As seguintes ferramentas foram usadas na construção do projeto:
@@ -98,9 +106,7 @@ $ npm start
 
 A ferramenta de suporte de criação das requisição usada foi o [Postman](https://www.postman.com/), você pode usar a de sua preferência.
 
-## Places:
-
-
+### Places:
 
 - Página inicial:<br />
 GET 🏚️ <http://localhost:9090/>
@@ -127,7 +133,7 @@ PUT 📝 <http://localhost:9090/home/update><br />
 - Deletar um host:<br />
 DELETE 🗑️ <http://localhost:9090/home/delete><br />
 
-## Usuários 
+### Usuários:
 
 - Listar todos usuários:<br />
 GET 🗂️ <http://localhost:9090/user/all>
