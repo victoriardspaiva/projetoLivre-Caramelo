@@ -132,9 +132,9 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 | Feature | Método | Rota |
 |---------|--------|------|
-| Página inicial| GET | 🏚️ `{{URL}}/`|
-| Listar todas os hosts disponiveis |GET  | 🗂️ `{{URL}}/all`|
-| Listar hosts por filtros | GET  | 🗃️ `{{URL}}/home/search`|
+|🏚️ Página inicial| GET |  `{{URL}}/`|
+|🗂️ Listar todas os hosts disponiveis |GET  |  `{{URL}}/all`|
+|🗃️ Listar hosts por filtros | GET  |  `{{URL}}/home/search`|
 
    - ✔️ name
    - ✔️ id
@@ -148,23 +148,20 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 | Feature | Método | Rota |
 |---------|--------|------|
-| Criar um cadastro para o host POST |📋 `{{URL}}/home/create`|
-| Atualizar dados cadastrais do host PUT |📝 `{{URL}}/home/update`|
-| Deletar um host |DELETE 🗑️ `{{URL}}/home/delete`|
+|📋 Criar um cadastro para o host | POST|  `{{URL}}/home/create`|
+|📝 Atualizar dados cadastrais do host | PUT|  `{{URL}}/home/update`|
+|🗑️ Deletar um host |DELETE | `{{URL}}/home/delete`|
 
 ## Usuários 
 
-- Listar todos usuários: GET 🗂️ `{{URL}}/user/all`
-
-- Listar usuário por id: GET 📂 `{{URL}}/user/id?`
-
-- Registrar usuários: POST 📋 `{{URL}}/register`
-
-- Login de usuário: POST ✅ `{{URL}}/user/login`
-
-- Atualizar dados cadastrais do usuário: PUT 📝 `{{URL}}/user/update`
-
-- Deletar um usuários: DELETE ❌ `{{URL}}/user/delete`
+| Feature | Método | Rota |
+|---------|--------|------|
+|🗂️ Listar todos usuários: |GET|  `{{URL}}/user/all`|
+|📂 Listar usuário por id: |GET|  `{{URL}}/user/id?`|
+|📋 Registrar usuários: |POST|  `{{URL}}/register`|
+|✅ Login de usuário: |POST|  `{{URL}}/user/login`|
+|📝 Atualizar dados cadastrais do usuário: |PUT|  `{{URL}}/user/update`|
+|❌ Deletar um usuários: |DELETE|  `{{URL}}/user/delete`|
 
 ### Tratamento de erro
 - [ ] 422 Pesquisa não encontrada (dos filtros)
