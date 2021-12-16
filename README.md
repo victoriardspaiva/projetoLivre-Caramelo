@@ -167,10 +167,10 @@ PUT 📝 <http://localhost:9090/user/update><br />
 DELETE ❌ <http://localhost:9090/user/delete><br />
 
 ### Tratamento de erro
-- [] 422 Pesquisa não encontrada (dos filtros)
+- [ ] 422 Pesquisa não encontrada (dos filtros)
 - [x] só para gatos e cachorros
-- [] campo vazio
-- [] letra mauiscula/minuscula 
+- [ ] campo vazio
+- [ ] letra mauiscula/minuscula 
 
 ### Implementações futuras
 * Exibir número disponivel de vagas;
