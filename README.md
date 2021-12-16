@@ -2,6 +2,8 @@
 
 > Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
 
+`heruko` https://projeto-caramelo.herokuapp.com/
+
 ![assets/logo.png](assets/logo.png)
 
 
@@ -119,8 +121,6 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 ## Places:
 
-
-
 - Página inicial:<br />
 GET 🏚️ <http://localhost:9090/>
 
@@ -136,7 +136,10 @@ GET 🗃️ <http://localhost:9090/home/search>
    - ✔️ district
    - ✔️ host
 
-<!-- # rotas privadas -->
+### Rotas privadas:
+
+> Para ter acesso as rotas privadas é necessário primeiramente criar registro de usuário, depois realizar o login, copiar o token de autenticação. Ir na aba de Authorization no Type escolher `Bearer Token` e no campo token colar o código que foi copiado.
+
 - Criar um cadastro para o host:<br /> 
 POST 📋 <http://localhost:9090/home/create>
 
