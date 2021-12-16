@@ -131,11 +131,11 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 > Obs.: {{URL}}/home/all ou https://projeto-caramelo.herokuapp.com/home/all.
 
 
-- Página inicial: GET 🏚️ <http://localhost:9090/>
+- Página inicial: GET 🏚️ `{{URL}}/`
 
-- Listar todas os hosts disponiveis: GET 🗂️ <http://localhost:9090/home/all>
+- Listar todas os hosts disponiveis: GET 🗂️ `{{URL}}/all`
 
-- Listar hosts por filtros: GET 🗃️ <http://localhost:9090/home/search>
+- Listar hosts por filtros: GET 🗃️ `{{URL}}/home/search`
 
    - ✔️ name
    - ✔️ id
@@ -147,25 +147,25 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 > Para ter acesso as rotas privadas é necessário primeiramente criar registro de usuário, depois realizar o login, copiar o token de autenticação. Ir na aba de Authorization no Type escolher `Bearer Token` e no campo token colar o código que foi copiado.
 
-- Criar um cadastro para o host: POST 📋 <http://localhost:9090/home/create>
+- Criar um cadastro para o host: POST 📋 `{{URL}}/home/create`
 
-- Atualizar dados cadastrais do host: PUT 📝 <http://localhost:9090/home/update><br />
+- Atualizar dados cadastrais do host: PUT 📝 `{{URL}}/home/update`
 
-- Deletar um host: DELETE 🗑️ <http://localhost:9090/home/delete><br />
+- Deletar um host: DELETE 🗑️ `{{URL}}/home/delete`
 
 ## Usuários 
 
-- Listar todos usuários: GET 🗂️ <http://localhost:9090/user/all>
+- Listar todos usuários: GET 🗂️ `{{URL}}/user/all`
 
-- Listar usuário por id: GET 📂 <http://localhost:9090/user/id?>
+- Listar usuário por id: GET 📂 `{{URL}}/user/id?`
 
-- Registrar usuários: POST 📋 <http://localhost:9090/user/register>
+- Registrar usuários: POST 📋 `{{URL}}/register`
 
-- Login de usuário: POST ✅ <http://localhost:9090/user/login>
+- Login de usuário: POST ✅ `{{URL}}/user/login`
 
-- Atualizar dados cadastrais do usuário: PUT 📝 <http://localhost:9090/user/update><br />
+- Atualizar dados cadastrais do usuário: PUT 📝 `{{URL}}/user/update`
 
-- Deletar um usuários: DELETE ❌ <http://localhost:9090/user/delete><br />
+- Deletar um usuários: DELETE ❌ `{{URL}}/user/delete`
 
 ### Tratamento de erro
 - [ ] 422 Pesquisa não encontrada (dos filtros)
