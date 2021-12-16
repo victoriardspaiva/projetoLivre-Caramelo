@@ -8,7 +8,7 @@
 
 <h1 align="center">
   <img src="assets/logo.png" alt="um gato e uma cachorro abraçados em formato de coração" width="500">
-<p align="center">🐕 🍬 Projeto Caramelo 🍬 🐕<p>
+<!-- <p align="center">🐕 🍬 Projeto Caramelo 🍬 🐕<p> -->
 </h1>
 
 > Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
@@ -131,14 +131,11 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 > Obs.: {{URL}}/home/all ou https://projeto-caramelo.herokuapp.com/home/all.
 
 
-- Página inicial:<br />
-GET 🏚️ <http://localhost:9090/>
+- Página inicial: GET 🏚️ <http://localhost:9090/>
 
-- Listar todas os hosts disponiveis:<br />
-GET 🗂️ <http://localhost:9090/home/all>
+- Listar todas os hosts disponiveis: GET 🗂️ <http://localhost:9090/home/all>
 
-- Listar hosts por filtros:<br />
-GET 🗃️ <http://localhost:9090/home/search>
+- Listar hosts por filtros: GET 🗃️ <http://localhost:9090/home/search>
 
    - ✔️ name
    - ✔️ id
@@ -150,34 +147,25 @@ GET 🗃️ <http://localhost:9090/home/search>
 
 > Para ter acesso as rotas privadas é necessário primeiramente criar registro de usuário, depois realizar o login, copiar o token de autenticação. Ir na aba de Authorization no Type escolher `Bearer Token` e no campo token colar o código que foi copiado.
 
-- Criar um cadastro para o host:<br /> 
-POST 📋 <http://localhost:9090/home/create>
+- Criar um cadastro para o host: POST 📋 <http://localhost:9090/home/create>
 
-- Atualizar dados cadastrais do host:<br />
-PUT 📝 <http://localhost:9090/home/update><br />
+- Atualizar dados cadastrais do host: PUT 📝 <http://localhost:9090/home/update><br />
 
-- Deletar um host:<br />
-DELETE 🗑️ <http://localhost:9090/home/delete><br />
+- Deletar um host: DELETE 🗑️ <http://localhost:9090/home/delete><br />
 
 ## Usuários 
 
-- Listar todos usuários:<br />
-GET 🗂️ <http://localhost:9090/user/all>
+- Listar todos usuários: GET 🗂️ <http://localhost:9090/user/all>
 
-- Listar usuário por id:<br />
-GET 📂 <http://localhost:9090/user/id?>
+- Listar usuário por id: GET 📂 <http://localhost:9090/user/id?>
 
-- Registrar usuários:<br /> 
-POST 📋 <http://localhost:9090/user/register>
+- Registrar usuários: POST 📋 <http://localhost:9090/user/register>
 
-- Login de usuário:<br /> 
-POST ✅ <http://localhost:9090/user/login>
+- Login de usuário: POST ✅ <http://localhost:9090/user/login>
 
-- Atualizar dados cadastrais do usuário:<br />
-PUT 📝 <http://localhost:9090/user/update><br />
+- Atualizar dados cadastrais do usuário: PUT 📝 <http://localhost:9090/user/update><br />
 
-- Deletar um usuários:<br />
-DELETE ❌ <http://localhost:9090/user/delete><br />
+- Deletar um usuários: DELETE ❌ <http://localhost:9090/user/delete><br />
 
 ### Tratamento de erro
 - [ ] 422 Pesquisa não encontrada (dos filtros)
