@@ -182,5 +182,7 @@ DELETE ❌ <http://localhost:9090/user/delete><br />
 * Notificação de eventos e campanhas de adoção;
 * Veterinários parceiros.
 
+![assets/adocao.jpg](assets/adocao.jpg)
+
 
 
