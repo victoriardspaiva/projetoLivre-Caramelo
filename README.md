@@ -130,12 +130,11 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 > Voce pode acessar a rota: localmente, sem ou com variavel de ambiente, ou pode acessar também -só as rotas get- consumindo pela aplicação.
 > Obs.: {{URL}}/home/all ou https://projeto-caramelo.herokuapp.com/home/all.
 
-
-- Página inicial: GET 🏚️ `{{URL}}/`
-
-- Listar todas os hosts disponiveis: GET 🗂️ `{{URL}}/all`
-
-- Listar hosts por filtros: GET 🗃️ `{{URL}}/home/search`
+| Feature | Método | Rota |
+|---------|--------|------|
+| Página inicial| GET | 🏚️ `{{URL}}/`|
+| Listar todas os hosts disponiveis |GET  | 🗂️ `{{URL}}/all`|
+| Listar hosts por filtros | GET  | 🗃️ `{{URL}}/home/search`|
 
    - ✔️ name
    - ✔️ id
@@ -147,11 +146,11 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 > Para ter acesso as rotas privadas é necessário primeiramente criar registro de usuário, depois realizar o login, copiar o token de autenticação. Ir na aba de Authorization no Type escolher `Bearer Token` e no campo token colar o código que foi copiado.
 
-- Criar um cadastro para o host: POST 📋 `{{URL}}/home/create`
-
-- Atualizar dados cadastrais do host: PUT 📝 `{{URL}}/home/update`
-
-- Deletar um host: DELETE 🗑️ `{{URL}}/home/delete`
+| Feature | Método | Rota |
+|---------|--------|------|
+| Criar um cadastro para o host POST |📋 `{{URL}}/home/create`|
+| Atualizar dados cadastrais do host PUT |📝 `{{URL}}/home/update`|
+| Deletar um host |DELETE 🗑️ `{{URL}}/home/delete`|
 
 ## Usuários 
 
