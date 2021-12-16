@@ -1,28 +1,34 @@
-# 🐕 🍬 Projeto Caramelo 🍬 🐕
+<p align="center">
+  <a>
+    <a href="https://projeto-caramelo.herokuapp.com/"><img alt="Deploy on Heroku" src="https://img.shields.io/badge/deploy-heroku.com-blueviolet">
+    <a href="https://www.mongodb.com/cloud/atlas"><img alt="Database MongoDB" src="https://img.shields.io/badge/database-mongodb.com-green">
+    <a href="https://nodejs.org/pt-br/"><img alt="Node version" src="https://img.shields.io/badge/node-v12.18.3-blue">
+  </a>
+</p>
+
+<h1 align="center">
+  <img src="assets/logo.png" alt="um gato e uma cachorro abraçados em formato de coração" width="500">
+<p align="center">🐕 🍬 Projeto Caramelo 🍬 🐕<p>
+</h1>
 
 > Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
 
-`heruko` https://projeto-caramelo.herokuapp.com/
-
-![assets/logo.png](assets/logo.png)
-
-
-## 📑 Índice
+### 📑 Índice
 ---
 
-   - [Problemática](#problemática-)
-   - [Solução](#solução-)
-   - [Público alvo](#o-público-alvo)
-   - [Arquitetura](#-arquitetura)
-   - [Tecnologias](#-tecnologias)
-   - [Orientações](#-orientações)
-      - [Pré-requisitos](#-pré-requisitos)
-      - [Rodando o Back End (servidor)](#-rodando-o-back-end-servidor)
-      - [Rotas, links e métodos](#--rotas-links-e-métodos)
-         - [Places](#places)
-         - [Usuários](#usuários)
-   - [Tratamento de erro](#-orientações)
-   - [Implementações futuras](#implementações-futuras)
+- [Problemática](#problemática-)
+- [Solução](#solução-)
+- [Público alvo](#o-público-alvo)
+- [Arquitetura](#-arquitetura)
+- [Tecnologias](#-tecnologias)
+- [Orientações](#-orientações)
+   - [Pré-requisitos](#-pré-requisitos)
+   - [Rodando o Back End (servidor)](#-rodando-o-back-end-servidor)
+   - [Rotas, links e métodos](#--rotas-links-e-métodos)
+      - [Places](#places)
+      - [Usuários](#usuários)
+- [Tratamento de erro](#-orientações)
+- [Implementações futuras](#implementações-futuras)
 
 
 ### Problemática 😿
