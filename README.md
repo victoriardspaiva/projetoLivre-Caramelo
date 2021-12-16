@@ -8,16 +8,19 @@
 ## 📑 Índice
 ---
 
-   - [Problemática](#-arquitetura)
-   - [Solução](#-arquitetura)
-   - [Público alvo](#-arquitetura)
+   - [Problemática](#problemática-)
+   - [Solução](#solução-)
+   - [Público alvo](#o-público-alvo)
    - [Arquitetura](#-arquitetura)
    - [Tecnologias](#-tecnologias)
    - [Orientações](#-orientações)
       - [Pré-requisitos](#-pré-requisitos)
       - [Rodando o Back End (servidor)](#-rodando-o-back-end-servidor)
       - [Rotas, links e métodos](#--rotas-links-e-métodos)
-   - [Implementações futuras](#-orientações)
+         - [Places](#places)
+         - [Usuários](#usuários)
+   - [Tratamento de erro](#-orientações)
+   - [Implementações futuras](#implementações-futuras)
 
 
 ### Problemática 😿
@@ -163,7 +166,7 @@ PUT 📝 <http://localhost:9090/user/update><br />
 - Deletar um usuários:<br />
 DELETE ❌ <http://localhost:9090/user/delete><br />
 
-### Tratamento de mensagens de erro
+### Tratamento de erro
 - [] 422 Pesquisa não encontrada (dos filtros)
 - [x] só para gatos e cachorros
 - [] campo vazio
