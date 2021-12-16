@@ -121,11 +121,15 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 ## Places:
 
+> Voce pode acessar a rota: localmente, sem ou com variavel de ambiente, ou pode acessar também -só as rotas get- consumindo pela aplicação.
+> Obs.: {{URL}}/home/all ou https://projeto-caramelo.herokuapp.com/home/all.
+
+
 - Página inicial:<br />
 GET 🏚️ <http://localhost:9090/>
 
 - Listar todas os hosts disponiveis:<br />
-GET 🗂️ <http://localhost:9090/home/caramelo>
+GET 🗂️ <http://localhost:9090/home/all>
 
 - Listar hosts por filtros:<br />
 GET 🗃️ <http://localhost:9090/home/search>
