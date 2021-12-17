@@ -8,7 +8,6 @@
 
 <h1 align="center">
   <img src="assets/logo.png" alt="um gato e uma cachorro abraçados em formato de coração" width="500">
-<!-- <p align="center">🐕 🍬 Projeto Caramelo 🍬 🐕<p> -->
 </h1>
 
 > Projeto final do bootcamp {reprograma} backend, criando CRUD de ONG's e abrigos de animais.
@@ -125,14 +124,14 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 
 > Na barra de URL `endpoint`, vamos preencher o nome da variavel entre dois cochetes `{{URL}}`.
 
-## Places:
+## Hosts:
 
 > Voce pode acessar a rota: localmente, sem ou com variavel de ambiente, ou pode acessar também -só as rotas get- consumindo pela aplicação.
 > Obs.: {{URL}}/home/all ou https://projeto-caramelo.herokuapp.com/home/all.
 
 | Feature | Método | Rota |
 |---------|--------|------|
-|🏚️ Página inicial| GET |  `{{URL}}/`|
+|🏚️ Página inicial/ home | GET |  `{{URL}}/`|
 |🗂️ Listar todas os hosts disponiveis |GET  |  `{{URL}}/all`|
 |🗃️ Listar hosts por filtros | GET  |  `{{URL}}/home/search`|
 
@@ -164,10 +163,10 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 |❌ Deletar um usuários: |DELETE|  `{{URL}}/user/delete`|
 
 ### Tratamento de erro
-- [ ] 422 Pesquisa não encontrada (dos filtros)
+- [x] 422 Pesquisa não encontrada (dos filtros)
 - [x] só para gatos e cachorros
-- [ ] campo vazio
-- [ ] letra mauiscula/minuscula 
+- [x] campo vazio
+
 
 ### Implementações futuras
 * Exibir número disponivel de vagas;

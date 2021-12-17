@@ -29,5 +29,4 @@ router.put('/up', checkAuth, controller.upHost)
 //@access Private
 router.delete('/delete', checkAuth, controller.deleteHost)
 
-
 module.exports = router

@@ -50,22 +50,24 @@ const createPlace = async (req, res) => {
 const getBySearch = async (req, res) => {
     const { id, name, host, district, animal } = req.query
     let search = Places
-    let filter = {}
-
+    let found = {}
+    
     try {
         if (id) {
             search = await search.findById(id)
+            if (search == null) res.status(400).json({ "message": "Host does not exist."})
+            console.log(search);
             return res.status(200).json(search)
-        }
 
-        if (name) filter.name = { $regex: name }
-        if (animal) filter.animal = { $regex: animal }
-        if (district) filter.district = { $regex: district }
-        if (host) filter.host = host
-                
-        search = await search.find(filter)
-        console.log(search)
+        }
         
+        if (name) found.name = { $regex: name }
+        if (animal) found.animal = { $regex: animal }
+        if (district) found.district = { $regex: district }
+        if (host) found.host = host        
+                
+        search = await search.find(found)        
+        if (search == '') res.status(400).json({ "message": "No results were found. Reset your search and try again."})
         res.status(200).json(search)
 
     } catch (e) {
@@ -118,7 +120,6 @@ const deleteHost = async (req, res) => {
 
 module.exports = {
     getAll,
-    getBySearch,
     getBySearch,
     createPlace,
     upHost,
