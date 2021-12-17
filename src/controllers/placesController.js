@@ -51,22 +51,23 @@ const getBySearch = async (req, res) => {
     const { id, name, host, district, animal } = req.query
     let search = Places
     let found = {}
-    
+
     try {
         if (id) {
             search = await search.findById(id)
-            if (search == null) return res.status(422).json({ "message": "Host does not exist."})
+            if (search == null) return res.status(422).json({ "message": "Host does not exist." })
             return res.status(200).json(search)
 
         }
-        
+
         if (name) found.name = { $regex: name }
         if (animal) found.animal = { $regex: animal }
         if (district) found.district = { $regex: district }
-        if (host) found.host = host        
-                
-        search = await search.find(found)        
-        if (search == '') return res.status(422).json({ "message": "No results were found. Reset your search and try again."})
+        if (host) found.host = host
+
+        search = await search.find(found)
+        if (id == '' || name == '' || host == '' || district == '' || animal == '') return res.status(422).json({ "message": "The search field must not be empty. Set search or search for all records." })
+        if (search == '') return res.status(422).json({ "message": "No results were found. Reset your search and try again." })
         res.status(200).json(search)
 
     } catch (e) {
@@ -109,7 +110,7 @@ const upHost = async (req, res) => {
 const deleteHost = async (req, res) => {
     try {
         let id = await Places.findById(req.query.id)
-        if (id == null) return res.status(422).json({ "message": "Host does not exist."})
+        if (id == null) return res.status(422).json({ "message": "Host does not exist." })
         const deletePlace = await Places.findByIdAndDelete({ _id: req.query.id })
         res.status(200).json({
             message: "Host deleted sucessfully", deletePlace
