@@ -24,7 +24,7 @@
    - [Pré-requisitos](#-pré-requisitos)
    - [Rodando o Back End (servidor)](#-rodando-o-back-end-servidor)
    - [Rotas, links e métodos](#--rotas-links-e-métodos)
-      - [Places](#places)
+      - [Places](#hosts)
       - [Usuários](#usuários)
 - [Tratamento de erro](#-orientações)
 - [Implementações futuras](#implementações-futuras)
@@ -163,9 +163,9 @@ Para criar a variavel é necessário na collection > aba Variables preencha na c
 |❌ Deletar um usuários: |DELETE|  `{{URL}}/user/delete`|
 
 ### Tratamento de erro
-- [x] 422 Pesquisa não encontrada (dos filtros)
-- [x] só para gatos e cachorros
-- [x] campo vazio
+- [x] Pesquisa não encontrada
+- [x] Só para gatos e cachorros
+- [x] Retorno vazio
 
 
 ### Implementações futuras

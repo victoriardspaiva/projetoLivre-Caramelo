@@ -55,8 +55,7 @@ const getBySearch = async (req, res) => {
     try {
         if (id) {
             search = await search.findById(id)
-            if (search == null) res.status(400).json({ "message": "Host does not exist."})
-            console.log(search);
+            if (search == null) return res.status(422).json({ "message": "Host does not exist."})
             return res.status(200).json(search)
 
         }
@@ -67,7 +66,7 @@ const getBySearch = async (req, res) => {
         if (host) found.host = host        
                 
         search = await search.find(found)        
-        if (search == '') res.status(400).json({ "message": "No results were found. Reset your search and try again."})
+        if (search == '') return res.status(422).json({ "message": "No results were found. Reset your search and try again."})
         res.status(200).json(search)
 
     } catch (e) {
@@ -109,6 +108,8 @@ const upHost = async (req, res) => {
 
 const deleteHost = async (req, res) => {
     try {
+        let id = await Places.findById(req.query.id)
+        if (id == null) return res.status(422).json({ "message": "Host does not exist."})
         const deletePlace = await Places.findByIdAndDelete({ _id: req.query.id })
         res.status(200).json({
             message: "Host deleted sucessfully", deletePlace
